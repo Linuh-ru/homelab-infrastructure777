@@ -40,6 +40,7 @@ curl -s https://raw.githubusercontent.com/Linuh-ru/homelab-infrastructure/main/s
   -o /tmp/create-template.sh && \
 chmod +x /tmp/create-template.sh && \
 /tmp/create-template.sh
+```
 
 #### Вариант 2: Быстрый (только если доверяешь источнику)
 Однострочник для быстрого запуска:
@@ -70,14 +71,3 @@ text
 9000 template  ubuntu-22.04-cloudinit  running   2048    2    -
 Или через веб-интерфейс Proxmox: в списке виртуальных машин должна появиться запись с именем ubuntu-22.04-cloudinit и пометкой «Шаблон».
 
-
-
-#### Вариант 1: Безопасный (рекомендуется)
-
-Скачивает скрипт во временный файл, проверяет права и запускает. Позволяет вручную убедиться, что скачался именно скрипт, а не HTML-страница.
-
-```bash
-curl -s https://raw.githubusercontent.com/Linuh-ru/homelab-infrastructure/main/scripts/create-ubuntu-template.sh \
-  -o /tmp/create-template.sh && \
-chmod +x /tmp/create-template.sh && \
-/tmp/create-template.sh
