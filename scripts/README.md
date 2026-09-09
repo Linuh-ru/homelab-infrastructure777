@@ -54,8 +54,8 @@ wget -qO- https://raw.githubusercontent.com/Linuh-ru/homelab-infrastructure/main
 
 ```bash
 qm list | grep 9000
-Ожидаемый вывод (в колонке Template должно быть 1):
 ```
+Ожидаемый вывод (в колонке Template должно быть 1):
 ```text
 9000 template  ubuntu-22.04-cloudinit  running   2048    2    -
 ```
