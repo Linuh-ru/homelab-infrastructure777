@@ -41,8 +41,12 @@ curl -s https://raw.githubusercontent.com/Linuh-ru/homelab-infrastructure/main/s
 chmod +x /tmp/create-template.sh && \
 /tmp/create-template.sh
 
-#### Вариант 2: Быстрый (только если доверяешь источнику)
+Вариант 2: Быстрый (только если доверяешь источнику)
+Однострочник для быстрого запуска:
+
+bash
 wget -qO- https://raw.githubusercontent.com/Linuh-ru/homelab-infrastructure/main/scripts/create-ubuntu-template.sh | bash
+⚠️ Важно: Не используй этот вариант в автоматизированных пайплайнах без дополнительной проверки целостности (например, SHA-сумм), так как любая ошибка сети приведёт к выполнению неполного или повреждённого кода.
 
 Что делает скрипт
 Скачивает официальный Ubuntu Cloud Image (jammy-server-cloudimg-amd64.img).
@@ -55,7 +59,13 @@ wget -qO- https://raw.githubusercontent.com/Linuh-ru/homelab-infrastructure/main
 Настраивает Cloud-Init на получение IP по DHCP.
 Превращает ВМ в шаблон (qm template).
 Удаляет скачанный образ-источник.
-
 Проверка результата
 После успешного завершения проверь, что шаблон создан:
+
+bash
 qm list | grep 9000
+Ожидаемый вывод (в колонке Template должно быть 1):
+
+text
+9000 template  ubuntu-22.04-cloudinit  running   2048    2    -
+Или через веб-интерфейс Proxmox: в списке виртуальных машин должна появиться запись с именем ubuntu-22.04-cloudinit и пометкой «Шаблон».
