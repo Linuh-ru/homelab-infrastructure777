@@ -57,7 +57,7 @@ qm list | grep 9000
 ```
 Ожидаемый вывод (в колонке Template должно быть 1):
 ```text
-9000 template  ubuntu-22.04-cloudinit  running   2048    2    -
+      9000 ubuntu-22.04-cloudinit stopped    2048              20.20 0         
 ```
 Или через веб-интерфейс Proxmox: в списке виртуальных машин должна появиться запись с именем ubuntu-22.04-cloudinit и пометкой «Шаблон».
 
