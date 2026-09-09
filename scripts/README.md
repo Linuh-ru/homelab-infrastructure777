@@ -41,7 +41,7 @@ curl -s https://raw.githubusercontent.com/Linuh-ru/homelab-infrastructure/main/s
 chmod +x /tmp/create-template.sh && \
 /tmp/create-template.sh
 
-Вариант 2: Быстрый (только если доверяешь источнику)
+#### Вариант 2: Быстрый (только если доверяешь источнику)
 Однострочник для быстрого запуска:
 
 bash
